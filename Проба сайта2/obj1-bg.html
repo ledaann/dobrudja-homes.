@@ -1,0 +1,354 @@
+
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8">
+  <!-- Обязателен метатег за адаптивност на мобилни устройства -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Парцели и соларна инсталация 30 кWp</title>
+  
+  <style>
+    /* Базови стилове за целия сайт */
+    body {
+      font-family: Arial, sans-serif;
+      font-size: 18px;           /* Четлив едър шрифт */
+      line-height: 1.6;          
+      color: #333;
+      max-width: 900px;          /* Ограничение на ширината за компютър */
+      margin: 0 auto;            /* Центриране на сайта */
+      padding: 15px;             /* Странични отстъпи */
+      box-sizing: border-box;
+    }
+
+    *, *:before, *:after {
+      box-sizing: inherit;
+    }
+
+    /* Езиков превключвател */
+    .lang-switcher {
+      display: flex; 
+      gap: 10px; 
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .lang-switcher a {
+      color: #fff; 
+      padding: 6px 12px; 
+      border-radius: 4px; 
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    /* Стили за секции и заглавия */
+    .listing-section {
+      width: 100%;
+    }
+    
+    h1, h2, h3 {
+      color: #2c5aa0;
+      text-align: center;
+      margin-top: 25px;
+      margin-bottom: 15px;
+    }
+
+    h1 { font-size: 28px; line-height: 1.3; }
+    h2 { color: #3a7bc0; border-bottom: 2px solid #eee; padding-bottom: 8px; }
+    h3 { font-size: 22px; text-align: left; border-bottom: 1px solid #ccc; padding-bottom: 5px; }
+
+    .price { 
+      font-weight: bold; 
+      color: #d35400; 
+      font-size: 1.2em; 
+      margin: 5px 0;
+    }
+
+    ul { padding-left: 20px; }
+    
+    /* Карти на обектите */
+    .card {
+      background: #f9f9f9;
+      border: 1px solid #eee;
+      padding: 20px;
+      margin-bottom: 40px;
+      border-radius: 8px;
+    }
+
+    /* Адаптивна галерия за снимки */
+    .photos {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;                  
+      margin: 20px 0;
+    }
+    
+    .photos img {
+      width: calc(33.333% - 10px); /* 3 снимки в ред на компютър */
+      height: 200px;               /* Фиксирана височина за подреденост */
+      object-fit: cover;           /* Мащабиране без деформация */
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    /* Бутон за картата */
+    .map-button {
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: #2c5aa0;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      max-width: 100%;
+      word-wrap: break-word;
+    }
+
+    /* Блок за контакти */
+    .contact-container {
+      display: flex; 
+      justify-content: center; 
+      gap: 15px; 
+      flex-wrap: wrap; 
+      margin-top: 25px;
+    }
+
+    .contact-btn {
+      color: white; 
+      padding: 14px 24px; 
+      border-radius: 6px; 
+      text-decoration: none; 
+      font-weight: bold; 
+      display: inline-block;
+      text-align: center;
+      min-width: 160px;
+    }
+
+    /* АДАПТИВНОСТ ЗА СМАРТФОНИ И ТАБЛЕТИ */
+    @media (max-width: 768px) {
+      body {
+        font-size: 16px; /* Леко намаляване на шрифта на мобилни устройства */
+        padding: 10px;
+      }
+      
+      h1 { font-size: 22px; }
+      h3 { font-size: 18px; }
+
+      /* Снимките се подреждат по 2 в ред на таблети и големи телефони */
+      .photos img {
+        width: calc(50% - 8px);
+        height: 150px;
+      }
+
+      /* Бутоните за контакти се разтягат на цял екран за по-удобно натискане */
+      .contact-container {
+        flex-direction: column;
+        gap: 10px;
+      }
+      .contact-btn {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      /* Снимките се подреждат по 1 в ред на малки смартфони */
+      .photos img {
+        width: 100%;
+        height: auto; /* Запазване на оригиналните пропорции на малък екран */
+      }
+    }
+  
+    /* ---- флаги языков ---- */
+    .lang-switcher.flags { gap: 10px; }
+    .lang-switcher .flag { display: inline-block; width: 38px; height: 26px; padding: 0; border-radius: 4px; overflow: hidden;
+      box-shadow: 0 0 0 1px rgba(0,0,0,.25); opacity: .75; transition: transform .15s, opacity .15s; background: none; }
+    .lang-switcher .flag svg { display: block; width: 100%; height: 100%; }
+    .lang-switcher .flag:hover { opacity: 1; transform: translateY(-2px); }
+    .lang-switcher .flag.cur { opacity: 1; box-shadow: 0 0 0 2px #2c5aa0; }
+    /* ---- боковой навигатор ---- */
+    .sidenav { position: fixed; left: 12px; top: 14px; width: 190px; background: #fff; border: 1px solid #e3e7ee; border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,.07); padding: 10px; z-index: 50; display: flex; flex-direction: column; gap: 6px; font-size: 14px; line-height: 1.3; }
+    .sidenav .nh { font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: #888; padding: 2px 6px; }
+    .sidenav .nv { display: flex; align-items: center; gap: 10px; padding: 6px; border-radius: 8px; text-decoration: none; color: #333; }
+    .sidenav .nv:hover { background: #f1f5fb; }
+    .sidenav .nv.on { background: #e6eefb; box-shadow: inset 3px 0 0 #2c5aa0; }
+    .sidenav .nv img, .sidenav .nv .ico { width: 54px; height: 40px; border-radius: 6px; object-fit: cover; flex: none; }
+    .sidenav .nv .ico { display: flex; align-items: center; justify-content: center; background: #2c5aa0; color: #fff; }
+    .sidenav .nv .ico svg { width: 22px; height: 22px; }
+    .sidenav .tx b { display: block; font-size: 14px; color: #2c5aa0; }
+    .sidenav .tx .sub { display: block; font-size: 12px; color: #666; }
+    @media (min-width: 1000px) {
+      body { margin-left: max(224px, calc((100vw - 900px) / 2)); margin-right: auto; }
+    }
+    @media (max-width: 999px) {
+      .sidenav { position: static; width: auto; flex-direction: row; flex-wrap: wrap; align-items: stretch; margin: 0 0 14px; }
+      .sidenav .nh { display: none; }
+      .sidenav .nv { flex: 1 1 170px; }
+      .sidenav .nv img, .sidenav .nv .ico { width: 44px; height: 34px; }
+      .sidenav .tx .sub { display: none; }
+    }
+    /* ---- галереи / карточки ---- */
+    .gal { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 16px 0 22px; }
+    .gal a { display: block; }
+    .gal img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,.1); display: block; }
+    .gal.plans { grid-template-columns: repeat(2, 1fr); }
+    .gal.c2 { grid-template-columns: repeat(2, 1fr); }
+    .gal.c1 { grid-template-columns: 1fr; }
+    .gal.c1 img { aspect-ratio: 21 / 9; }
+    .pm { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin: 14px 0 18px; }
+    .pm .price { margin: 0; }
+    .gal.plans img { aspect-ratio: auto; object-fit: contain; background: #f1f3f7; }
+    .gal figure { margin: 0; } .gal figcaption { font-size: 14px; color: #666; text-align: center; margin-top: 4px; }
+    @media (max-width: 768px) { .gal { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 480px) { .gal.plans { grid-template-columns: 1fr; } }
+    .lead { text-align: center; font-size: 19px; }
+    .ocard { display: block; background: #f9f9f9; border: 1px solid #e6e6e6; border-radius: 10px; overflow: hidden; margin-bottom: 26px; text-decoration: none; color: #333;
+      transition: transform .15s, box-shadow .15s; cursor: pointer; }
+    .ocard:hover, .ocard:focus-visible { transform: translateY(-3px); box-shadow: 0 8px 22px rgba(44,90,160,.18); }
+    .ocard img { width: 100%; height: 270px; object-fit: cover; display: block; }
+    .ocard .in { padding: 14px 20px 18px; }
+    .ocard h2 { color: #2c5aa0; font-size: 22px; margin: 0 0 6px; text-align: left; border: 0; padding: 0; }
+    .ocard .price { font-weight: bold; color: #d35400; font-size: 1.2em; }
+    .ocard .go { display: inline-block; margin-top: 8px; color: #2c5aa0; font-weight: bold; }
+    .txt h2 { margin-top: 34px; }
+    .txt li { margin-bottom: 10px; }
+    @media (max-width: 600px) { .ocard img { height: 200px; } .mapsvg { aspect-ratio: 4 / 3; } }
+    /* ---- карта ---- */
+    .mapbox { margin: 10px 0 30px; }
+    .mapbox .bar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 8px; }
+    .mapbox button, .mapbox .gm { font: inherit; font-size: 15px; font-weight: bold; padding: 7px 14px; border-radius: 6px; border: 1px solid #2c5aa0; background: #fff; color: #2c5aa0; cursor: pointer; text-decoration: none; }
+    .mapbox button.on { background: #2c5aa0; color: #fff; }
+    .mapbox .gm { margin-left: auto; background: #2c5aa0; color: #fff; }
+    .mapbox .hint { font-size: 14px; color: #666; margin: 6px 0 0; }
+    .mapsvg { width: 100%; display: block; aspect-ratio: 16 / 10; border: 1px solid #cdd8e6; border-radius: 10px; background: #cfe6f7; }
+    .mapsvg .pin { cursor: pointer; } .mapsvg .pin:hover .pb { fill: #b11a14; }
+    .mapsvg text { font-family: Arial, sans-serif; }
+    .mapsvg .pulse { animation: pu 2.2s ease-out infinite; transform-box: fill-box; transform-origin: center; }
+    @keyframes pu { 0% { opacity: .55; transform: scale(.6); } 100% { opacity: 0; transform: scale(2.2); } }
+    @media (prefers-reduced-motion: reduce) { .mapsvg .pulse { animation: none; opacity: .25; } }
+
+  </style>
+</head>
+<body>
+<nav class="sidenav" aria-label="Обекти"><div class="nh">Обекти</div><a class="nv" href="index-bg.html"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z" fill="currentColor"/></svg></span><span class="tx"><b>Начало</b></span></a><a class="nv on" href="obj1-bg.html" aria-current="page"><img src="img/thumb-obj1.jpg" alt="" loading="lazy"><span class="tx"><b>с. Победа</b><span class="sub">Парцели, къща, соларна централа</span></span></a><a class="nv" href="odrintsi-bg.html"><img src="img/thumb-odrintsi.jpg" alt="" loading="lazy"><span class="tx"><b>с. Одринци</b><span class="sub">Къща, СПА, оранжерия</span></span></a></nav>
+
+  <!-- Превключвател на езици -->
+  <div class="lang-switcher flags"><a class="flag" href="obj1-ru.html" title="Русский" aria-label="Русский" hreflang="ru"><svg viewBox="0 0 30 20" aria-hidden="true"><rect width="30" height="20" fill="#fff"/><rect y="6.67" width="30" height="6.67" fill="#0039A6"/><rect y="13.33" width="30" height="6.67" fill="#D52B1E"/></svg></a><a class="flag cur" href="obj1-bg.html" title="Български" aria-label="Български" hreflang="bg" aria-current="true"><svg viewBox="0 0 30 20" aria-hidden="true"><rect width="30" height="20" fill="#fff"/><rect y="6.67" width="30" height="6.67" fill="#00966E"/><rect y="13.33" width="30" height="6.67" fill="#D62612"/></svg></a><a class="flag" href="obj1-de.html" title="Deutsch" aria-label="Deutsch" hreflang="de"><svg viewBox="0 0 30 20" aria-hidden="true"><rect width="30" height="20" fill="#000"/><rect y="6.67" width="30" height="6.67" fill="#DD0000"/><rect y="13.33" width="30" height="6.67" fill="#FFCE00"/></svg></a><a class="flag" href="obj1-en.html" title="English" aria-label="English" hreflang="en"><svg viewBox="0 0 60 40" preserveAspectRatio="none" aria-hidden="true"><clipPath id="gbs"><path d="M0,0 v40 h60 v-40 z"/></clipPath><clipPath id="gbt"><path d="M30,20 h30 v20 z v20 h-30 z h-30 v-20 z v-20 h30 z"/></clipPath><g clip-path="url(#gbs)"><path d="M0,0 v40 h60 v-40 z" fill="#012169"/><path d="M0,0 L60,40 M60,0 L0,40" stroke="#fff" stroke-width="8"/><path d="M0,0 L60,40 M60,0 L0,40" clip-path="url(#gbt)" stroke="#C8102E" stroke-width="5"/><path d="M30,0 v40 M0,20 h60" stroke="#fff" stroke-width="13"/><path d="M30,0 v40 M0,20 h60" stroke="#C8102E" stroke-width="8"/></g></svg></a></div>
+
+  <div class="listing-section">
+
+    <h1>Парцели и соларна инсталация 30 кWp.<br>3 варианта, могат да се закупят заедно или отделно</h1>
+
+    <p><strong><span style="color: blue;">Местоположение:</span> Село Победа се намира на 3 км от град Добрич и на 30 км от град Балчик и морските плажове. Близостта до града прави този обект изгодно вложение. 
+    Мястото е подходящо както за постоянно живеене, така и като източник на доходи. Има обществен транспорт; 
+    селото е добре развито: тук работят детска градина и училище, отворены са няколко магазина, съседите са добри, а земята е изключително плодородна.</strong></p>
+
+    <div style="text-align: center; margin: 20px 0;">
+      <a href="https://maps.app.goo.gl/n5Lwxw5oqQPJKKwP8" target="_blank" class="map-button">🗺 Вижте в Google Maps</a>
+    </div>
+
+    <!-- ВАРИАНТ 1 -->
+    <h3>Вариант 1: Соларна електроцентрала 30 кWp и парцел 700 кв.метра</h3>
+    <p class="price">Цена: 35 000 €</p>
+    
+    <div class="card"> 
+      <p><strong>Основни характеристики:</strong></p>
+      <ul>
+        <li>Имотът е подходящ за ипотека.</li>
+        <li>Носи ежемесечен доход, позволяващ покриването на вноските.</li>
+        <li>Възможност за надграждане с инсталиране на батерии за увеличаване на дохода.</li>
+        <li>Зарядна станция за електромобили.</li>
+        <li>Компактна конструкция 12х12 метра, която не засенчва парцела; няма да пада сянка от къщата, има място за работилница.</li>
+      </ul>
+      <div class="photos">
+        <img src="solar-1.jpg" alt="solar 1" />
+        <img src="solar-2.jpg" alt="solar 2" />
+        <img src="solar-3.jpg" alt="solar 3" />
+        <img src="solar-4.jpg" alt="solar 4" />
+        <img src="solar-5.jpg" alt="solar 5" />
+        <img src="solar-6.jpg" alt="solar 6" />
+      </div>
+    </div>
+
+    <!-- ВАРИАНТ 2 -->
+    <h3>Вариант 2: Парцел 700 кв.метров до соларната централа</h3>
+    <p class="price">Цена: 25 000 €</p>
+    
+    <div class="card">
+      <p><strong>Основни характеристики:</strong> Равен парцел, електричество на границата, плодни дръвчета, кедри, орехи, борове, жив плет. Има място за зеленчукова градина.</p>
+      <div class="photos">
+        <img src="land-1.jpg" alt="land 1" />
+        <img src="land-2.jpg" alt="land 2" />
+        <img src="land-3.jpg" alt="land 3" />
+      </div>
+    </div>
+   
+    <!-- ВАРИАНТ 3 -->
+    <h3>Вариант 3: Къща 100 кв. метра и парцел 600 кв. метра</h3>
+    <p class="price">Цена: 85 000 €</p>
+    
+    <div class="card">
+      <p>Може да бъде закупена съвместно с другите предложения.<br>
+      <strong>Основни характеристики:</strong> Къщата е годна за живеене, парцел 600 кв.метра, прокарани вода и електричество.<br>
+      <strong>Предимства:</strong> Автентична каменна изба (8 кв. м); нови панорамни прозорци с високи енергоспестяващи характеристики; лозе; масивна ограда; кипариси, образуващи „зелена стена“; розови храсти; система за капково напояване. Предвидено е място за градина, както и за изграждане на допълнителна спалня (получено е разрешение за строеж).</p>
+
+      <ul>
+        <li>Можете да живеете в къщата и да я реновирате постепенно, без големи първоначални инвестиции. В комбинация с парцела със соларната централа ще получавате доход от продажба на електроенергия.</li>
+        <li>Къщата разполага с 2 спални, хол и баня с душ. Плюс собствен водоизточник (кладенец) в допълнение към централния водопровод — без зависимост от ВиК.</li>
+        <li>Отопление на печка; опция за инсталиране на система за топъл под с помощта на слънчеви топлинни колектори (колекторите се предоставят безплатно).</li>
+        <li>Собствен соларен бойлер, свързан към 3 соларни панела.</li>
+        <li>Включен собствен гараж.</li>
+      </ul>
+      
+      <div class="photos">
+        <img src="house-main.jpg" alt="Къща главен изглед" />
+        <img src="fence.jpg" alt="Ограда" />
+        <img src="fence-1.jpg" alt="Ограда 1" />
+        <img src="house-1.jpg" alt="Къща изглед 1" />
+        <img src="house-2.jpg" alt="Къща изглед 2" />
+        <img src="house-3.jpg" alt="Къща изглед 3" />
+        <img src="house-5.jpg" alt="Къща изглед 5" />
+        <img src="house-6.jpg" alt="Къща изглед 6" />
+        <img src="house-7.jpg" alt="Къща изглед 7" />
+        <img src="house-8.jpg" alt="Къща изглед 8" />
+        <img src="house-4.jpg" alt="Къща изглед 4" />
+        <img src="house-10.jpg" alt="Къща изглед 10" />
+      </div>
+    </div>
+
+    <!-- БЛОК ЗА КОНТАКТИ -->
+    <div style="margin-top: 50px; border-top: 2px solid #eee; padding-top: 30px; text-align: center;">
+      <h2>Ще отговорим на всички ваши въпроси:</h2>
+      <p>Ние говорим български, руски и английски език</p>
+      <p><strong>Директно от собственик. Разумен коментар на цената. Отстъпка при покупка на няколко обекта.</strong></p>
+      
+      <div class="contact-container">
+        <!-- Телефон -->
+        <a href="tel:+359877305818" class="contact-btn" style="background: #2c5aa0;">
+          📞 +359 877 305 818
+        </a>
+
+        <!-- Почта -->
+        <a href="mailto:Ks203403834@gmail.com" class="contact-btn" style="background: #d35f5f;">
+          ✉️ Email
+        </a>
+
+        <!-- WhatsApp -->
+        <a href="https://wa.me" target="_blank" class="contact-btn" style="background: #25D366;">
+          💬 WhatsApp
+        </a>
+
+        <!-- Telegram -->
+        <a href="https://t.me" target="_blank" class="contact-btn" style="background: #0088cc;">
+          ✈️ Telegram
+        </a>
+
+        <!-- Viber -->
+        <a href="viber://chat?number=%2B359877305818" class="contact-btn" style="background: #8f499b;">
+          💜 Viber
+        </a>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
