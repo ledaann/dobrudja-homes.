@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dobrudja-homes-bulgaria.bulgaria.workers.dev/sitemap.xml
