@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Недвижимость в Добриче, Балчике и Варне: дом и инвестиции</title>
+  <meta name="description" content="Продажа недвижимости в регионе Добрич – Балчик – Варна: дом для жизни и объект с доходом. Напрямую от собственника, без комиссии. Тихо, спокойно, море рядом.">
+  <style>
+    /* Базовые стили для всего сайта */
+    body {
+      font-family: Arial, sans-serif;
+      font-size: 18px;           /* Читаемый крупный шрифт */
+      line-height: 1.6;          
+      color: #333;
+      max-width: 900px;          /* Ограничение ширины для ПК */
+      margin: 0 auto;            /* Центрирование сайта */
+      padding: 15px;             /* Отступы по бокам */
+      box-sizing: border-box;
+    }
+
+    *, *:before, *:after {
+      box-sizing: inherit;
+    }
+
+    /* Языковой переключатель */
+    .lang-switcher {
+      display: flex; 
+      gap: 10px; 
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .lang-switcher a {
+      color: #fff; 
+      padding: 6px 12px; 
+      border-radius: 4px; 
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    /* Стили секции и заголовков */
+    .listing-section {
+      width: 100%;
+    }
+    
+    h1, h2, h3 {
+      color: #2c5aa0;
+      text-align: center;
+      margin-top: 25px;
+      margin-bottom: 15px;
+    }
+
+    h1 { font-size: 28px; line-height: 1.3; }
+    h2 { color: #3a7bc0; border-bottom: 2px solid #eee; padding-bottom: 8px; }
+    h3 { font-size: 22px; text-align: left; border-bottom: 1px solid #ccc; padding-bottom: 5px; }
+
+    .price { 
+      font-weight: bold; 
+      color: #d35400; 
+      font-size: 1.2em; 
+      margin: 5px 0;
+    }
+
+    ul { padding-left: 20px; }
+    
+    /* Карточки объектов */
+    .card {
+      background: #f9f9f9;
+      border: 1px solid #eee;
+      padding: 20px;
+      margin-bottom: 40px;
+      border-radius: 8px;
+    }
+
+    /* Адаптивная галерея картинок */
+    .photos {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;                  
+      margin: 20px 0;
+    }
+    
+    .photos img {
+      width: calc(33.333% - 10px); /* 3 картинки в ряд на ПК */
+      height: 200px;               /* Фиксированная высота для аккуратности */
+      object-fit: cover;           /* Картинки масштабируются без искажений */
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    /* Ссылка на карту */
+    .map-button {
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: #2c5aa0;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      max-width: 100%;
+      word-wrap: break-word;
+    }
+
+    /* Блок контактов */
+    .contact-container {
+      display: flex; 
+      justify-content: center; 
+      gap: 15px; 
+      flex-wrap: wrap; 
+      margin-top: 25px;
+    }
+
+    .contact-btn {
+      color: white; 
+      padding: 14px 24px; 
+      border-radius: 6px; 
+      text-decoration: none; 
+      font-weight: bold; 
+      display: inline-block;
+      text-align: center;
+      min-width: 160px;
+    }
+
+    /* АДАПТИВНОСТЬ ДЛЯ СМАРТФОНОВ И ПЛАНШЕТОВ */
+    @media (max-width: 768px) {
+      body {
+        font-size: 16px; /* Чуть уменьшаем шрифт для мобильных */
+        padding: 10px;
+      }
+      
+      h1 { font-size: 22px; }
+      h3 { font-size: 18px; }
+
+      /* Картинки перестраиваются по 2 в ряд на планшетах/крупных телефонах */
+      .photos img {
+        width: calc(50% - 8px);
+        height: 150px;
+      }
+
+      /* Кнопки контактов растягиваются на весь экран для удобства нажатия пальцем */
+      .contact-container {
+        flex-direction: column;
+        gap: 10px;
+      }
+      .contact-btn {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      /* Картинки встают по 1 в ряд на мелких смартфонах */
+      .photos img {
+        width: 100%;
+        height: auto; /* На маленьких экранах пусть сохраняют оригинальные пропорции */
+      }
+    }
+  
+    /* ---- флаги языков ---- */
+    .lang-switcher.flags { gap: 10px; }
+    .lang-switcher .flag { display: inline-block; width: 38px; height: 26px; padding: 0; border-radius: 4px; overflow: hidden;
+      box-shadow: 0 0 0 1px rgba(0,0,0,.25); opacity: .75; transition: transform .15s, opacity .15s; background: none; }
+    .lang-switcher .flag svg { display: block; width: 100%; height: 100%; }
+    .lang-switcher .flag:hover { opacity: 1; transform: translateY(-2px); }
+    .lang-switcher .flag.cur { opacity: 1; box-shadow: 0 0 0 2px #2c5aa0; }
+    /* ---- боковой навигатор ---- */
+    .sidenav { position: fixed; left: 12px; top: 14px; width: 190px; background: #fff; border: 1px solid #e3e7ee; border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,.07); padding: 10px; z-index: 50; display: flex; flex-direction: column; gap: 6px; font-size: 14px; line-height: 1.3; }
+    .sidenav .nh { font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: #888; padding: 2px 6px; }
+    .sidenav .nv { display: flex; align-items: center; gap: 10px; padding: 6px; border-radius: 8px; text-decoration: none; color: #333; }
+    .sidenav .nv:hover { background: #f1f5fb; }
+    .sidenav .nv.on { background: #e6eefb; box-shadow: inset 3px 0 0 #2c5aa0; }
+    .sidenav .nv img, .sidenav .nv .ico { width: 54px; height: 40px; border-radius: 6px; object-fit: cover; flex: none; }
+    .sidenav .nv .ico { display: flex; align-items: center; justify-content: center; background: #2c5aa0; color: #fff; }
+    .sidenav .nv .ico svg { width: 22px; height: 22px; }
+    .sidenav .tx b { display: block; font-size: 14px; color: #2c5aa0; }
+    .sidenav .tx .sub { display: block; font-size: 12px; color: #666; }
+    @media (min-width: 1000px) {
+      body { margin-left: max(224px, calc((100vw - 900px) / 2)); margin-right: auto; }
+    }
+    @media (max-width: 999px) {
+      .sidenav { position: static; width: auto; flex-direction: row; flex-wrap: wrap; align-items: stretch; margin: 0 0 14px; }
+      .sidenav .nh { display: none; }
+      .sidenav .nv { flex: 1 1 170px; }
+      .sidenav .nv img, .sidenav .nv .ico { width: 44px; height: 34px; }
+      .sidenav .tx .sub { display: none; }
+    }
+    /* ---- галереи / карточки ---- */
+    .gal { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 16px 0 22px; }
+    .gal a { display: block; }
+    .gal img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,.1); display: block; }
+    .gal.plans { grid-template-columns: repeat(2, 1fr); }
+    .gal.c2 { grid-template-columns: repeat(2, 1fr); }
+    .gal.c1 { grid-template-columns: 1fr; }
+    .gal.c1 img { aspect-ratio: 21 / 9; }
+    .pm { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin: 14px 0 18px; }
+    .pm .price { margin: 0; }
+    .gal.plans img { aspect-ratio: auto; object-fit: contain; background: #f1f3f7; }
+    .gal figure { margin: 0; } .gal figcaption { font-size: 14px; color: #666; text-align: center; margin-top: 4px; }
+    @media (max-width: 768px) { .gal { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 480px) { .gal.plans { grid-template-columns: 1fr; } }
+    .lead { text-align: center; font-size: 19px; }
+    .ocard { display: block; background: #f9f9f9; border: 1px solid #e6e6e6; border-radius: 10px; overflow: hidden; margin-bottom: 26px; text-decoration: none; color: #333;
+      transition: transform .15s, box-shadow .15s; cursor: pointer; }
+    .ocard:hover, .ocard:focus-visible { transform: translateY(-3px); box-shadow: 0 8px 22px rgba(44,90,160,.18); }
+    .ocard img { width: 100%; height: 270px; object-fit: cover; display: block; }
+    .ocard .in { padding: 14px 20px 18px; margin: 14px; border: 2px solid #a9c8f0; border-radius: 8px; background: #fff; }
+    .hl { background: #ffe3c4; color: #d35400; font-weight: bold; padding: 1px 6px; border-radius: 4px; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+    .ocard h2 { color: #2c5aa0; font-size: 22px; margin: 0 0 6px; text-align: left; border: 0; padding: 0; }
+    .ocard .price { font-weight: bold; color: #d35400; font-size: 1.2em; }
+    .ocard .go { display: inline-block; margin-top: 8px; color: #2c5aa0; font-weight: bold; }
+    .txt h2 { margin-top: 34px; }
+    .txt li { margin-bottom: 10px; }
+    @media (max-width: 600px) { .ocard img { height: 200px; } .mapsvg { aspect-ratio: 4 / 3; } }
+    /* ---- карта ---- */
+    .mapbox { margin: 10px 0 30px; }
+    .mapbox .bar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 8px; }
+    .mapbox button, .mapbox .gm { font: inherit; font-size: 15px; font-weight: bold; padding: 7px 14px; border-radius: 6px; border: 1px solid #2c5aa0; background: #fff; color: #2c5aa0; cursor: pointer; text-decoration: none; }
+    .mapbox button.on { background: #2c5aa0; color: #fff; }
+    .mapbox .gm { margin-left: auto; background: #2c5aa0; color: #fff; }
+    .mapbox .hint { font-size: 14px; color: #666; margin: 6px 0 0; }
+    .mapsvg { width: 100%; display: block; aspect-ratio: 16 / 10; border: 1px solid #cdd8e6; border-radius: 10px; background: #cfe6f7; }
+    .mapsvg .pin { cursor: pointer; } .mapsvg .pin:hover .pb { fill: #b11a14; }
+    .mapsvg text { font-family: Arial, sans-serif; }
+    .mapsvg .pulse { animation: pu 2.2s ease-out infinite; transform-box: fill-box; transform-origin: center; }
+    @keyframes pu { 0% { opacity: .55; transform: scale(.6); } 100% { opacity: 0; transform: scale(2.2); } }
+    @media (prefers-reduced-motion: reduce) { .mapsvg .pulse { animation: none; opacity: .25; } }
+</style>
+  <!-- seo --><link rel="canonical" href="https://dobrudja-homes-bulgaria.bulgaria.workers.dev/">
+  <link rel="alternate" hreflang="ru" href="https://dobrudja-homes-bulgaria.bulgaria.workers.dev/">
+  <link rel="alternate" hreflang="bg" href="https://dobrudja-homes-bulgaria.bulgaria.workers.dev/index-bg">
+  <link rel="alternate" hreflang="de" href="https://dobrudja-homes-bulgaria.bulgaria.workers.dev/index-de">
+  <link rel="alternate" hreflang="en" href="https://dobrudja-homes-bulgaria.bulgaria.workers.dev/index-en">
+  <link rel="alternate" hreflang="x-default" href="https://dobrudja-homes-bulgaria.bulgaria.workers.dev/index-en">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Dobrudja Homes">
+  <meta property="og:title" content="Недвижимость в Добриче, Балчике и Варне: дом и инвестиции">
+  <meta property="og:description" content="Продажа недвижимости в регионе Добрич – Балчик – Варна: дом для жизни и объект с доходом. Напрямую от собственника, без комиссии. Тихо, спокойно, море рядом.">
+  <meta property="og:url" content="https://dobrudja-homes-bulgaria.bulgaria.workers.dev/">
+  <meta property="og:image" content="https://dobrudja-homes-bulgaria.bulgaria.workers.dev/odrintsi9.jpg">
+  <meta property="og:locale" content="ru_RU">
+  <meta name="twitter:card" content="summary_large_image"><!-- /seo -->
+</head>
+<body>
+<nav class="sidenav" aria-label="Объекты"><div class="nh">Объекты</div><a class="nv on" href="index.html" aria-current="page"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z" fill="currentColor"/></svg></span><span class="tx"><b>Главная</b></span></a><a class="nv" href="obj1-ru.html"><img src="img/thumb-obj1.jpg" alt="" loading="lazy"><span class="tx"><b>с. Победа</b><span class="sub">Участки, дом, солнечная станция</span></span></a><a class="nv" href="odrintsi-ru.html"><img src="img/thumb-odrintsi.jpg" alt="" loading="lazy"><span class="tx"><b>с. Одринци</b><span class="sub">Дом, СПА, теплица</span></span></a></nav>
+  <div class="lang-switcher flags"><a class="flag cur" href="index.html" title="Русский" aria-label="Русский" hreflang="ru" aria-current="true"><svg viewBox="0 0 30 20" aria-hidden="true"><rect width="30" height="20" fill="#fff"/><rect y="6.67" width="30" height="6.67" fill="#0039A6"/><rect y="13.33" width="30" height="6.67" fill="#D52B1E"/></svg></a><a class="flag" href="index-bg.html" title="Български" aria-label="Български" hreflang="bg"><svg viewBox="0 0 30 20" aria-hidden="true"><rect width="30" height="20" fill="#fff"/><rect y="6.67" width="30" height="6.67" fill="#00966E"/><rect y="13.33" width="30" height="6.67" fill="#D62612"/></svg></a><a class="flag" href="index-de.html" title="Deutsch" aria-label="Deutsch" hreflang="de"><svg viewBox="0 0 30 20" aria-hidden="true"><rect width="30" height="20" fill="#000"/><rect y="6.67" width="30" height="6.67" fill="#DD0000"/><rect y="13.33" width="30" height="6.67" fill="#FFCE00"/></svg></a><a class="flag" href="index-en.html" title="English" aria-label="English" hreflang="en"><svg viewBox="0 0 60 40" preserveAspectRatio="none" aria-hidden="true"><clipPath id="gbs"><path d="M0,0 v40 h60 v-40 z"/></clipPath><clipPath id="gbt"><path d="M30,20 h30 v20 z v20 h-30 z h-30 v-20 z v-20 h30 z"/></clipPath><g clip-path="url(#gbs)"><path d="M0,0 v40 h60 v-40 z" fill="#012169"/><path d="M0,0 L60,40 M60,0 L0,40" stroke="#fff" stroke-width="8"/><path d="M0,0 L60,40 M60,0 L0,40" clip-path="url(#gbt)" stroke="#C8102E" stroke-width="5"/><path d="M30,0 v40 M0,20 h60" stroke="#fff" stroke-width="13"/><path d="M30,0 v40 M0,20 h60" stroke="#C8102E" stroke-width="8"/></g></svg></a></div>
+  <div class="listing-section">
+    <h1>Недвижимость в Добриче, Балчике и Варне: дом и инвестиции</h1>
+    <p class="lead">Продажа недвижимости в регионе Добрич – Балчик – Варна: дом для жизни и объект с доходом. <span class="hl">Напрямую от собственника, без комиссии.</span> Тихо, спокойно, море рядом.</p>
+    <div class="txt">
+      <h2>Почему регион Добрич?</h2>
+      <p>Добруджа – это спокойная Болгария без множества туристов. Казалось бы, до моря 30–40 км, но здесь можно жить спокойно круглый год, без испепеляющей жары и с незначительным снегом зимой, наслаждаться термальными источниками на берегу, и до всех благ цивилизации рукой подать. Это регион благоустроенных пляжей с инфраструктурой, диких бухт и длинных песчаных дюн, где летом тихо и уединённо.</p>
+      <p>Вас очаруют Балчик с дворцом королевы Марии-Реджины и Ботаническим садом, Каварна с её спа-комплексами и гольф-клубами, Албена с идеальными отелями, бассейнами и охраняемой территорией, Варна с термальными источниками, аэропортом, прекрасным парком и инфраструктурой большого города. Всё это находится на расстоянии около 50 км от выбранного объекта.</p>
+      <ul>
+        <li><strong>Транспорт.</strong> Из Добрича в Варну автобусы ходят примерно каждые 15 минут, а по обновлённой дороге путь занимает около 45 минут. Есть железнодорожное сообщение. Международный аэропорт Варны в летнем сезоне 2026 года работал по 60 направлениям, среди них Париж, Берлин, Мюнхен, Вена, Рим, Барселона, Варшава и Стамбул.</li>
+<li><strong>Плодородная земля.</strong> Добруджа традиционно называется житницей Болгарии. Участок здесь – это возможность завести сад, огород и собственное хозяйство.</li>
+<li><strong>Развитая инфраструктура.</strong> В городах и курортных зонах есть магазины, школы, больницы, транспорт и сервис. В селах рядом с Добричем работают детские сады и школы, есть хорошее транспортное сообщение и нормальные дороги.</li>
+<li><strong>Инвестиционная привлекательность.</strong> Рядом с Варной и Балчиком цены на недвижимость остаются ниже, чем на популярных курортах побережья, а спрос держится за счёт моря, аэропорта и растущего интереса к жизни не только на побережье.</li>
+<li><strong>Рынок труда.</strong> Безработица в области снижается: в 2025 году она составила 5,8%, на 0,7 п.п. меньше, чем годом ранее, что делает жизнь региона стабильнее.</li>
+      </ul>
+    </div>
+    <h2 style="text-align:left">Объекты на продажу</h2>
+    <a class="ocard" href="obj1-ru.html"><img src="house-main.jpg" alt="с. Победа (рядом с Добричем): участки, дом и солнечная станция 30 кWp"><div class="in"><h2>с. Победа (рядом с Добричем): участки, дом и солнечная станция 30 кWp</h2><div class="price">от 25 000 €</div><span class="go">Подробнее →</span></div></a>
+    <a class="ocard" href="odrintsi-ru.html"><img src="odrintsi9.jpg" alt="Дом с духом традиции, СПА и теплица, с. Одринци"><div class="in"><h2>Дом с духом традиции, СПА и теплица, с. Одринци</h2><div class="price">135 000 €</div><span class="go">Подробнее →</span></div></a>
+
+    <section class="mapbox" id="map" data-reg="802.3 69.0 720.0 450.0" data-cty="-12.5 76.5 1560.0 975.0" data-gm-reg="https://www.google.com/maps/@?api=1&amp;map_action=map&amp;center=43.55,27.5&amp;zoom=9" data-gm-cty="https://www.google.com/maps/@?api=1&amp;map_action=map&amp;center=42.75,25.4&amp;zoom=7" data-lbl-reg="Открыть на Google Maps" data-lbl-cty="Вся Болгария на Google Maps">
+      <h2>Где находятся наши объекты</h2>
+      <div class="bar"><button type="button" class="on" data-v="reg">Регион</button><button type="button" data-v="cty">Вся Болгария</button>
+      <a class="gm" id="gmlink" href="https://www.google.com/maps/@?api=1&amp;map_action=map&amp;center=43.55,27.5&amp;zoom=9" target="_blank" rel="noopener">Открыть на Google Maps</a></div>
+      <svg id="mapsvg" class="mapsvg" viewBox="802.3 69.0 720.0 450.0" role="img" aria-label="Где находятся наши объекты" xmlns="http://www.w3.org/2000/svg"><rect x="-3000" y="-3000" width="8000" height="8000" fill="#e9ece6"/><path d="M2083.3,-570.0 L1699.6,-180.0 L1462.7,78.0 L1458.3,126.0 L1443.0,234.0 L1447.4,276.0 L1447.0,278.6 L1446.1,283.9 L1444.9,291.8 L1443.3,302.3 L1442.2,311.6 L1441.6,319.9 L1441.6,327.0 L1442.2,333.0 L1441.1,339.4 L1438.3,346.1 L1433.9,353.3 L1427.9,360.8 L1421.9,365.6 L1415.9,367.9 L1409.8,367.5 L1403.8,364.5 L1396.7,362.1 L1388.4,360.2 L1379.1,358.9 L1368.7,358.1 L1359.7,358.3 L1352.0,359.4 L1345.7,361.5 L1340.7,364.5 L1336.5,368.3 L1332.9,372.8 L1330.1,378.0 L1327.9,384.0 L1325.0,390.2 L1321.4,396.6 L1317.2,403.1 L1312.2,409.9 L1307.7,418.7 L1303.6,429.6 L1299.9,442.5 L1296.6,457.5 L1294.1,474.2 L1292.5,492.6 L1291.7,512.6 L1291.7,534.4 L1289.5,551.6 L1285.1,564.4 L1278.5,572.6 L1269.7,576.4 L1259.6,582.4 L1248.1,590.6 L1235.2,601.1 L1221.0,613.9 L1213.4,624.8 L1212.6,633.7 L1218.5,640.9 L1231.1,646.1 L1242.6,654.7 L1253.0,666.7 L1262.3,682.1 L1270.6,700.9 L1279.2,718.5 L1288.3,735.0 L1297.7,750.4 L1307.6,764.6 L1315.0,775.3 L1319.9,782.4 L1322.4,786.0 L1320.2,816.0 L1337.7,900.0 L1469.3,1005.0 L1557.0,1020.0 L2083.3,1230.0Z" fill="#cfe6f7"/><path d="M98.7,114.0 L101.8,114.9 L108.1,116.8 L117.6,119.6 L130.2,123.4 L142.3,129.6 L153.8,138.2 L164.7,149.2 L175.2,162.7 L185.4,174.9 L195.6,185.8 L205.6,195.4 L215.5,203.6 L225.3,210.9 L235.2,217.3 L245.1,222.7 L254.9,227.3 L267.4,232.1 L282.5,237.4 L300.2,243.0 L320.5,249.0 L340.7,254.4 L361.0,259.3 L381.3,263.6 L401.6,267.4 L422.7,269.6 L444.6,270.4 L467.4,269.6 L491.0,267.4 L515.5,266.1 L541.0,265.7 L567.4,266.3 L594.9,267.8 L618.4,269.6 L638.2,271.9 L654.1,274.5 L666.1,277.5 L678.3,280.5 L690.7,283.5 L703.1,286.5 L715.7,289.5 L729.3,290.3 L743.8,288.8 L759.3,285.0 L775.8,279.0 L792.5,271.7 L809.5,263.1 L826.8,253.1 L844.3,241.9 L861.3,231.6 L877.7,222.2 L893.6,213.7 L909.0,206.2 L925.3,198.7 L942.6,191.2 L960.8,183.8 L980.0,176.3 L999.2,170.1 L1018.4,165.2 L1037.6,161.6 L1056.8,159.4 L1075.5,156.9 L1093.9,154.3 L1111.9,151.5 L1129.4,148.5 L1142.6,146.3 L1151.3,144.8 L1155.7,144.0 L1210.5,171.0 L1282.9,204.0 L1355.3,240.0 L1403.5,258.0 L1447.4,276.0 L1447.0,278.6 L1446.1,283.9 L1444.9,291.8 L1443.3,302.3 L1442.2,311.6 L1441.6,319.9 L1441.6,327.0 L1442.2,333.0 L1441.1,339.4 L1438.3,346.1 L1433.9,353.3 L1427.9,360.8 L1421.9,365.6 L1415.9,367.9 L1409.8,367.5 L1403.8,364.5 L1396.7,362.1 L1388.4,360.2 L1379.1,358.9 L1368.7,358.1 L1359.7,358.3 L1352.0,359.4 L1345.7,361.5 L1340.7,364.5 L1336.5,368.3 L1332.9,372.8 L1330.1,378.0 L1327.9,384.0 L1325.0,390.2 L1321.4,396.6 L1317.2,403.1 L1312.2,409.9 L1307.7,418.7 L1303.6,429.6 L1299.9,442.5 L1296.6,457.5 L1294.1,474.2 L1292.5,492.6 L1291.7,512.6 L1291.7,534.4 L1289.5,551.6 L1285.1,564.4 L1278.5,572.6 L1269.7,576.4 L1259.6,582.4 L1248.1,590.6 L1235.2,601.1 L1221.0,613.9 L1213.4,624.8 L1212.6,633.7 L1218.5,640.9 L1231.1,646.1 L1242.6,654.7 L1253.0,666.7 L1262.3,682.1 L1270.6,700.9 L1279.2,718.5 L1288.3,735.0 L1297.7,750.4 L1307.6,764.6 L1315.0,775.3 L1319.9,782.4 L1322.4,786.0 L1195.2,759.0 L1096.5,780.0 L1008.8,825.0 L954.0,864.0 L910.1,915.0 L899.1,978.0 L789.5,975.0 L723.7,966.0 L636.0,915.0 L570.2,960.0 L504.4,1005.0 L416.7,975.0 L300.4,960.0 L206.1,972.0 L184.2,924.0 L142.5,840.0 L109.6,720.0 L78.9,684.0 L109.6,615.0 L153.5,525.0 L197.4,480.0 L149.1,375.0 L142.5,300.0 L109.6,216.0 L98.7,114.0Z" fill="#f4ecd4" stroke="#b9a978" stroke-width="1.3" stroke-linejoin="round"/><path d="M98.7,114.0 L101.8,114.9 L108.1,116.8 L117.6,119.6 L130.2,123.4 L142.3,129.6 L153.8,138.2 L164.7,149.2 L175.2,162.7 L185.4,174.9 L195.6,185.8 L205.6,195.4 L215.5,203.6 L225.3,210.9 L235.2,217.3 L245.1,222.7 L254.9,227.3 L267.4,232.1 L282.5,237.4 L300.2,243.0 L320.5,249.0 L340.7,254.4 L361.0,259.3 L381.3,263.6 L401.6,267.4 L422.7,269.6 L444.6,270.4 L467.4,269.6 L491.0,267.4 L515.5,266.1 L541.0,265.7 L567.4,266.3 L594.9,267.8 L618.4,269.6 L638.2,271.9 L654.1,274.5 L666.1,277.5 L678.3,280.5 L690.7,283.5 L703.1,286.5 L715.7,289.5 L729.3,290.3 L743.8,288.8 L759.3,285.0 L775.8,279.0 L792.5,271.7 L809.5,263.1 L826.8,253.1 L844.3,241.9 L861.3,231.6 L877.7,222.2 L893.6,213.7 L909.0,206.2 L925.3,198.7 L942.6,191.2 L960.8,183.8 L980.0,176.3 L999.2,170.1 L1018.4,165.2 L1037.6,161.6 L1056.8,159.4 L1075.5,156.9 L1093.9,154.3 L1111.9,151.5 L1129.4,148.5 L1142.6,146.3 L1151.3,144.8 L1155.7,144.0" fill="none" stroke="#7fb3dd" stroke-width="3" stroke-linecap="round"/><path d="M1155.7,144.0 L1156.8,142.1 L1159.0,138.4 L1162.3,132.8 L1166.7,125.3 L1174.8,118.1 L1186.6,111.4 L1202.0,105.0 L1221.2,99.0 L1240.1,93.8 L1258.8,89.3 L1277.1,85.5 L1295.2,82.5 L1309.1,73.5 L1318.7,58.5 L1324.0,37.5 L1325.1,10.5 L1326.6,-15.4 L1328.5,-40.1 L1330.9,-63.8 L1333.6,-86.2 L1335.7,-103.1 L1337.0,-114.4 L1337.7,-120.0" fill="none" stroke="#7fb3dd" stroke-width="3" stroke-linecap="round"/><path d="M1155.7,144.0 L1210.5,171.0 L1282.9,204.0 L1355.3,240.0 L1403.5,258.0 L1447.4,276.0" fill="none" stroke="#8c7d4f" stroke-width="1.5" stroke-dasharray="6 4"/><rect class="mk cty" x="802" y="69" width="720" height="450" rx="10" fill="none" stroke="#d63a31" stroke-width="3" stroke-dasharray="10 7"/><text class="mk lbl reg" data-x="1451.8" data-y="465.0" data-fs="16" transform="translate(1451.8 465.0)" text-anchor="middle" font-size="16" fill="#4f86b3" font-style="italic" letter-spacing="1">Чёрное море</text><text class="mk lbl reg" data-x="997.8" data-y="99.0" data-fs="17" transform="translate(997.8 99.0)" text-anchor="middle" font-size="17" fill="#9aa092" letter-spacing="3">РУМЫНИЯ</text><text class="mk lbl reg" data-x="921.1" data-y="165.0" data-fs="12" transform="translate(921.1 165.0)" text-anchor="middle" font-size="12" fill="#4f86b3" font-style="italic" transform-origin="0 0">Дунай</text><text class="mk lbl reg" data-x="954.0" data-y="480.0" data-fs="18" transform="translate(954.0 480.0)" text-anchor="middle" font-size="18" fill="#b4a370" letter-spacing="4">БОЛГАРИЯ</text><text class="mk lbl cty" data-x="1425.5" data-y="705.0" data-fs="20" transform="translate(1425.5 705.0)" text-anchor="middle" font-size="20" fill="#4f86b3" font-style="italic" letter-spacing="1">Чёрное море</text><text class="mk lbl cty" data-x="657.9" data-y="15.0" data-fs="26" transform="translate(657.9 15.0)" text-anchor="middle" font-size="26" fill="#9aa092" letter-spacing="5">РУМЫНИЯ</text><text class="mk lbl cty" data-x="592.1" data-y="495.0" data-fs="30" transform="translate(592.1 495.0)" text-anchor="middle" font-size="30" fill="#b4a370" letter-spacing="6">БОЛГАРИЯ</text><text class="mk lbl cty" data-x="1140.4" data-y="975.0" data-fs="20" transform="translate(1140.4 975.0)" text-anchor="middle" font-size="20" fill="#9aa092" letter-spacing="3">ТУРЦИЯ</text><text class="mk lbl cty" data-x="72.4" data-y="465.0" data-fs="13" transform="translate(72.4 465.0)" text-anchor="middle" font-size="13" fill="#9aa092" letter-spacing="1">СЕРБИЯ</text><g class="mk " data-x="1298.3" data-y="420.0" transform="translate(1298.3 420.0)"><circle r="3.6" fill="#555" stroke="#fff" stroke-width="1.2"/><text x="9" y="18" text-anchor="start" font-size="13" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">Варна</text></g><g class="mk reg" data-x="1081.1" data-y="399.0" transform="translate(1081.1 399.0)"><circle r="3.6" fill="#555" stroke="#fff" stroke-width="1.2"/><text x="-7" y="4" text-anchor="end" font-size="13" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">Шумен</text></g><g class="mk " data-x="870.6" data-y="225.0" transform="translate(870.6 225.0)"><circle r="3.6" fill="#555" stroke="#fff" stroke-width="1.2"/><text x="7" y="4" text-anchor="start" font-size="13" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">Русе</text></g><g class="mk reg" data-x="1153.5" data-y="144.0" transform="translate(1153.5 144.0)"><circle r="3.6" fill="#555" stroke="#fff" stroke-width="1.2"/><text x="7" y="14" text-anchor="start" font-size="13" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">Силистра</text></g><g class="mk reg" data-x="1277.9" data-y="308.2" transform="translate(1277.9 308.2)"><circle r="3.6" fill="#555" stroke="#fff" stroke-width="1.2"/><text x="0" y="20" text-anchor="middle" font-size="13" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">Добрич</text></g><g class="mk reg" data-x="1390.4" data-y="351.0" transform="translate(1390.4 351.0)"><circle r="3.6" fill="#555" stroke="#fff" stroke-width="1.2"/><text x="6" y="-6" text-anchor="start" font-size="13" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">Каварна</text></g><g class="mk reg" data-x="1353.1" data-y="357.0" transform="translate(1353.1 357.0)"><circle r="3.6" fill="#555" stroke="#fff" stroke-width="1.2"/><text x="-6" y="14" text-anchor="end" font-size="13" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">Балчик</text></g><g class="mk cty" data-x="289.5" data-y="570.0" transform="translate(289.5 570.0)"><circle r="3.6" fill="#555" stroke="#fff" stroke-width="1.2"/><text x="7" y="5" text-anchor="start" font-size="15" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">София</text></g><g class="mk cty" data-x="603.1" data-y="735.0" transform="translate(603.1 735.0)"><circle r="3.6" fill="#555" stroke="#fff" stroke-width="1.2"/><text x="7" y="5" text-anchor="start" font-size="15" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">Пловдив</text></g><g class="mk cty" data-x="1199.6" data-y="630.0" transform="translate(1199.6 630.0)"><circle r="3.6" fill="#555" stroke="#fff" stroke-width="1.2"/><text x="-7" y="5" text-anchor="end" font-size="15" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">Бургас</text></g><g class="mk" data-x="1277.4" data-y="410.4" transform="translate(1277.4 410.4)"><title>Аэропорт Варна</title><circle r="11" fill="#2c5aa0" stroke="#fff" stroke-width="1.6"/><path d="M0,-9 C1.2,-9 1.8,-8 1.8,-6.5 L1.8,-2.5 L9,2 L9,4 L1.8,2 L1.8,6 L4,7.6 L4,9 L0,8 L-4,9 L-4,7.6 L-1.8,6 L-1.8,2 L-9,4 L-9,2 L-1.8,-2.5 L-1.8,-6.5 C-1.8,-8 -1.2,-9 0,-9Z" transform="scale(.82) rotate(40)" fill="#fff"/><text x="-14" y="5" text-anchor="end" font-size="13" font-weight="bold" fill="#1f467f" stroke="#fff" stroke-width="3" paint-order="stroke">Аэропорт Варна</text></g><a class="pin mk" href="obj1-ru.html" data-x="1293.4" data-y="302.1" transform="translate(1293.4 302.1)" aria-label="с. Победа"><title>Наш объект: с. Победа</title><circle class="pulse" r="12" fill="#d63a31"/><path class="pb" d="M0,0 C-9,-11 -9,-21 0,-23 C9,-21 9,-11 0,0Z" fill="#d63a31" stroke="#fff" stroke-width="1.6"/><circle cy="-14" r="3.3" fill="#fff"/><text x="12" y="-8" text-anchor="start" font-size="15" font-weight="bold" fill="#8f1d17" stroke="#fff" stroke-width="3.5" paint-order="stroke">с. Победа</text></a><a class="pin mk" href="odrintsi-ru.html" data-x="1251.7" data-y="318.3" transform="translate(1251.7 318.3)" aria-label="с. Одринци"><title>Наш объект: с. Одринци</title><circle class="pulse" r="12" fill="#d63a31"/><path class="pb" d="M0,0 C-9,-11 -9,-21 0,-23 C9,-21 9,-11 0,0Z" fill="#d63a31" stroke="#fff" stroke-width="1.6"/><circle cy="-14" r="3.3" fill="#fff"/><text x="-12" y="-8" text-anchor="end" font-size="15" font-weight="bold" fill="#8f1d17" stroke="#fff" stroke-width="3.5" paint-order="stroke">с. Одринци</text></a></svg>
+      <p class="hint">Нажмите на метку, чтобы перейти к объекту.</p>
+    </section>
+
+
+    <div style="margin-top: 50px; border-top: 2px solid #eee; padding-top: 30px; text-align: center;">
+      <h2>Ответим на все вопросы:</h2>
+      <p>Мы говорим по-болгарски, по-русски и по-английски</p>
+      <p><strong>Direct owner. Разумный торг.</strong></p>
+      <div class="contact-container">
+        <a href="tel:+359877305818" class="contact-btn" style="background: #2c5aa0;">📞 +359 877 305 818</a>
+        <a href="mailto:Ks203403834@gmail.com" class="contact-btn" style="background: #d35f5f;">✉️ Email</a>
+        <a href="https://wa.me/359877305818" target="_blank" class="contact-btn" style="background: #25D366;">💬 WhatsApp</a>
+        <a href="https://t.me/KirillStrategy" target="_blank" class="contact-btn" style="background: #0088cc;">✈️ Telegram</a>
+        <a href="viber://chat?number=%2B359877305818" class="contact-btn" style="background: #8f499b;">💜 Viber</a>
+      </div>
+    </div>
+
+  </div>
+<script>
+(function(){
+  var box=document.getElementById('map'); if(!box) return;
+  var svg=document.getElementById('mapsvg'), gm=document.getElementById('gmlink');
+  var btns=box.querySelectorAll('button[data-v]');
+  function parse(s){var a=s.split(' ').map(Number);return {cx:a[0]+a[2]/2,cy:a[1]+a[3]/2,w:a[2]};}
+  var views={reg:parse(box.dataset.reg),cty:parse(box.dataset.cty)}, name='reg', cur={cx:views.reg.cx,cy:views.reg.cy,w:views.reg.w};
+  function apply(){
+    var r=svg.getBoundingClientRect(), aspect=(r.height&&r.width)?r.height/r.width:0.625, h=cur.w*aspect;
+    svg.setAttribute('viewBox',(cur.cx-cur.w/2).toFixed(1)+' '+(cur.cy-h/2).toFixed(1)+' '+cur.w.toFixed(1)+' '+h.toFixed(1));
+    var px=cur.w/(r.width||870), s=Math.max(1,px*0.85);
+    svg.querySelectorAll('.mk').forEach(function(g){
+      var x=g.getAttribute('data-x'),y=g.getAttribute('data-y'); if(x===null) return;
+      var k=g.classList.contains('lbl')?1+(s-1)*0.3:s; g.setAttribute('transform','translate('+x+' '+y+') scale('+k.toFixed(3)+')');
+    });
+  }
+  function show(v){
+    name=v;
+    svg.querySelectorAll('.reg').forEach(function(e){e.style.display=v==='reg'?'':'none';});
+    svg.querySelectorAll('.cty').forEach(function(e){e.style.display=v==='cty'?'':'none';});
+    btns.forEach(function(b){b.classList.toggle('on',b.dataset.v===v);});
+    gm.href=box.dataset[v==='reg'?'gmReg':'gmCty']; gm.textContent=box.dataset[v==='reg'?'lblReg':'lblCty'];
+  }
+  function go(v){
+    var from={cx:cur.cx,cy:cur.cy,w:cur.w}, to=views[v], t0=null, dur=550;
+    if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches) dur=1;
+    show(v);
+    function step(t){ if(!t0)t0=t; var k=Math.min(1,(t-t0)/dur); k=k<.5?2*k*k:1-Math.pow(-2*k+2,2)/2;
+      cur={cx:from.cx+(to.cx-from.cx)*k,cy:from.cy+(to.cy-from.cy)*k,w:from.w+(to.w-from.w)*k}; apply();
+      if(k<1)requestAnimationFrame(step); }
+    requestAnimationFrame(step);
+  }
+  btns.forEach(function(b){b.addEventListener('click',function(){go(b.dataset.v);});});
+  window.addEventListener('resize',function(){cur={cx:views[name].cx,cy:views[name].cy,w:views[name].w};apply();});
+  show('reg'); apply();
+})();
+</script>
+</body>
+</html>
