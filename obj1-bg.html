@@ -193,6 +193,11 @@
     .gal img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,.1); display: block; }
     .gal.plans { grid-template-columns: repeat(2, 1fr); }
     .gal.c2 { grid-template-columns: repeat(2, 1fr); }
+    /* фото объекта Победа: кликабельные */
+    .photos a { display: block; width: calc(33.333% - 10px); }
+    .photos a img { width: 100%; }
+    @media (max-width: 768px) { .photos a { width: calc(50% - 8px); } }
+    @media (max-width: 480px) { .photos a { width: 100%; } }
     .gal.c1 { grid-template-columns: 1fr; }
     .gal.c1 img { aspect-ratio: 21 / 9; }
     .pm { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin: 14px 0 18px; }
@@ -277,12 +282,12 @@
         <li>Компактна конструкция 12х12 метра, която не засенчва парцела; няма да пада сянка от къщата, има място за работилница.</li>
       </ul>
       <div class="photos">
-        <img src="solar-1.jpg" alt="solar 1" />
-        <img src="solar-2.jpg" alt="solar 2" />
-        <img src="solar-3.jpg" alt="solar 3" />
-        <img src="solar-4.jpg" alt="solar 4" />
-        <img src="solar-5.jpg" alt="solar 5" />
-        <img src="solar-6.jpg" alt="solar 6" />
+        <a href="solar-1.jpg" target="_blank" rel="noopener"><img src="solar-1.jpg" alt="solar 1" loading="lazy"></a>
+        <a href="solar-2.jpg" target="_blank" rel="noopener"><img src="solar-2.jpg" alt="solar 2" loading="lazy"></a>
+        <a href="solar-3.jpg" target="_blank" rel="noopener"><img src="solar-3.jpg" alt="solar 3" loading="lazy"></a>
+        <a href="solar-4.jpg" target="_blank" rel="noopener"><img src="solar-4.jpg" alt="solar 4" loading="lazy"></a>
+        <a href="solar-5.jpg" target="_blank" rel="noopener"><img src="solar-5.jpg" alt="solar 5" loading="lazy"></a>
+        <a href="solar-6.jpg" target="_blank" rel="noopener"><img src="solar-6.jpg" alt="solar 6" loading="lazy"></a>
       </div>
     </div>
 
@@ -293,9 +298,9 @@
     <div class="card">
       <p><strong>Основни характеристики:</strong> Равен парцел, електричество на границата, плодни дръвчета, кедри, орехи, борове, жив плет. Има място за зеленчукова градина.</p>
       <div class="photos">
-        <img src="land-1.jpg" alt="land 1" />
-        <img src="land-2.jpg" alt="land 2" />
-        <img src="land-3.jpg" alt="land 3" />
+        <a href="land-1.jpg" target="_blank" rel="noopener"><img src="land-1.jpg" alt="land 1" loading="lazy"></a>
+        <a href="land-2.jpg" target="_blank" rel="noopener"><img src="land-2.jpg" alt="land 2" loading="lazy"></a>
+        <a href="land-3.jpg" target="_blank" rel="noopener"><img src="land-3.jpg" alt="land 3" loading="lazy"></a>
       </div>
     </div>
    
@@ -317,18 +322,18 @@
       </ul>
       
       <div class="photos">
-        <img src="house-main.jpg" alt="Къща главен изглед" />
-        <img src="fence.jpg" alt="Ограда" />
-        <img src="fence-1.jpg" alt="Ограда 1" />
-        <img src="house-1.jpg" alt="Къща изглед 1" />
-        <img src="house-2.jpg" alt="Къща изглед 2" />
-        <img src="house-3.jpg" alt="Къща изглед 3" />
-        <img src="house-5.jpg" alt="Къща изглед 5" />
-        <img src="house-6.jpg" alt="Къща изглед 6" />
-        <img src="house-7.jpg" alt="Къща изглед 7" />
-        <img src="house-8.jpg" alt="Къща изглед 8" />
-        <img src="house-4.jpg" alt="Къща изглед 4" />
-        <img src="house-10.jpg" alt="Къща изглед 10" />
+        <a href="house-main.jpg" target="_blank" rel="noopener"><img src="house-main.jpg" alt="Къща главен изглед" loading="lazy"></a>
+        <a href="fence.jpg" target="_blank" rel="noopener"><img src="fence.jpg" alt="Ограда" loading="lazy"></a>
+        <a href="fence-1.jpg" target="_blank" rel="noopener"><img src="fence-1.jpg" alt="Ограда 1" loading="lazy"></a>
+        <a href="house-1.jpg" target="_blank" rel="noopener"><img src="house-1.jpg" alt="Къща изглед 1" loading="lazy"></a>
+        <a href="house-2.jpg" target="_blank" rel="noopener"><img src="house-2.jpg" alt="Къща изглед 2" loading="lazy"></a>
+        <a href="house-3.jpg" target="_blank" rel="noopener"><img src="house-3.jpg" alt="Къща изглед 3" loading="lazy"></a>
+        <a href="house-5.jpg" target="_blank" rel="noopener"><img src="house-5.jpg" alt="Къща изглед 5" loading="lazy"></a>
+        <a href="house-6.jpg" target="_blank" rel="noopener"><img src="house-6.jpg" alt="Къща изглед 6" loading="lazy"></a>
+        <a href="house-7.jpg" target="_blank" rel="noopener"><img src="house-7.jpg" alt="Къща изглед 7" loading="lazy"></a>
+        <a href="house-8.jpg" target="_blank" rel="noopener"><img src="house-8.jpg" alt="Къща изглед 8" loading="lazy"></a>
+        <a href="house-4.jpg" target="_blank" rel="noopener"><img src="house-4.jpg" alt="Къща изглед 4" loading="lazy"></a>
+        <a href="house-10.jpg" target="_blank" rel="noopener"><img src="house-10.jpg" alt="Къща изглед 10" loading="lazy"></a>
       </div>
     </div>
 

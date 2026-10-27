@@ -190,6 +190,11 @@
     .gal img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,.1); display: block; }
     .gal.plans { grid-template-columns: repeat(2, 1fr); }
     .gal.c2 { grid-template-columns: repeat(2, 1fr); }
+    /* фото объекта Победа: кликабельные */
+    .photos a { display: block; width: calc(33.333% - 10px); }
+    .photos a img { width: 100%; }
+    @media (max-width: 768px) { .photos a { width: calc(50% - 8px); } }
+    @media (max-width: 480px) { .photos a { width: 100%; } }
     .gal.c1 { grid-template-columns: 1fr; }
     .gal.c1 img { aspect-ratio: 21 / 9; }
     .pm { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin: 14px 0 18px; }
@@ -260,14 +265,14 @@
         <li>Electric-vehicle charging station.</li>
         <li>Compact 12×12 m structure that does not shade the plot, and the house will not cast a shadow on it; space for a workshop.</li>
       </ul>
-      <div class="photos"><img src="solar-1.jpg" alt="solar 1" /><img src="solar-2.jpg" alt="solar 2" /><img src="solar-3.jpg" alt="solar 3" /><img src="solar-4.jpg" alt="solar 4" /><img src="solar-5.jpg" alt="solar 5" /><img src="solar-6.jpg" alt="solar 6" /></div>
+      <div class="photos"><a href="solar-1.jpg" target="_blank" rel="noopener"><img src="solar-1.jpg" alt="solar 1" loading="lazy"></a><a href="solar-2.jpg" target="_blank" rel="noopener"><img src="solar-2.jpg" alt="solar 2" loading="lazy"></a><a href="solar-3.jpg" target="_blank" rel="noopener"><img src="solar-3.jpg" alt="solar 3" loading="lazy"></a><a href="solar-4.jpg" target="_blank" rel="noopener"><img src="solar-4.jpg" alt="solar 4" loading="lazy"></a><a href="solar-5.jpg" target="_blank" rel="noopener"><img src="solar-5.jpg" alt="solar 5" loading="lazy"></a><a href="solar-6.jpg" target="_blank" rel="noopener"><img src="solar-6.jpg" alt="solar 6" loading="lazy"></a></div>
     </div>
 
     <h3>Option 2: 700 m² plot next to the solar plant</h3>
     <p class="price">Price: €25,000</p>
     <div class="card">
       <p><strong>Key features:</strong> Level plot, electricity at the boundary, fruit trees, cedars, walnut trees, pines, a hedge. Room for a vegetable garden.</p>
-      <div class="photos"><img src="land-1.jpg" alt="land 1" /><img src="land-2.jpg" alt="land 2" /><img src="land-3.jpg" alt="land 3" /></div>
+      <div class="photos"><a href="land-1.jpg" target="_blank" rel="noopener"><img src="land-1.jpg" alt="land 1" loading="lazy"></a><a href="land-2.jpg" target="_blank" rel="noopener"><img src="land-2.jpg" alt="land 2" loading="lazy"></a><a href="land-3.jpg" target="_blank" rel="noopener"><img src="land-3.jpg" alt="land 3" loading="lazy"></a></div>
     </div>
 
     <h3>Option 3: 100 m² house and a 600 m² plot</h3>
@@ -281,7 +286,7 @@
         <li>Your own solar water heater fed by 3 solar panels.</li>
         <li>Private garage.</li>
       </ul>
-      <div class="photos"><img src="house-main.jpg" alt="House – main view" /><img src="fence.jpg" alt="House – fence view" /><img src="fence-1.jpg" alt="House – fence view 1" /><img src="house-1.jpg" alt="House view 1" /><img src="house-2.jpg" alt="House view 2" /><img src="house-3.jpg" alt="House view 3" /><img src="house-5.jpg" alt="House view 5" /><img src="house-6.jpg" alt="House view 6" /><img src="house-7.jpg" alt="House view 7" /><img src="house-8.jpg" alt="House view 8" /><img src="house-4.jpg" alt="House view 4" /><img src="house-10.jpg" alt="House view 10" /></div>
+      <div class="photos"><a href="house-main.jpg" target="_blank" rel="noopener"><img src="house-main.jpg" alt="House – main view" loading="lazy"></a><a href="fence.jpg" target="_blank" rel="noopener"><img src="fence.jpg" alt="House – fence view" loading="lazy"></a><a href="fence-1.jpg" target="_blank" rel="noopener"><img src="fence-1.jpg" alt="House – fence view 1" loading="lazy"></a><a href="house-1.jpg" target="_blank" rel="noopener"><img src="house-1.jpg" alt="House view 1" loading="lazy"></a><a href="house-2.jpg" target="_blank" rel="noopener"><img src="house-2.jpg" alt="House view 2" loading="lazy"></a><a href="house-3.jpg" target="_blank" rel="noopener"><img src="house-3.jpg" alt="House view 3" loading="lazy"></a><a href="house-5.jpg" target="_blank" rel="noopener"><img src="house-5.jpg" alt="House view 5" loading="lazy"></a><a href="house-6.jpg" target="_blank" rel="noopener"><img src="house-6.jpg" alt="House view 6" loading="lazy"></a><a href="house-7.jpg" target="_blank" rel="noopener"><img src="house-7.jpg" alt="House view 7" loading="lazy"></a><a href="house-8.jpg" target="_blank" rel="noopener"><img src="house-8.jpg" alt="House view 8" loading="lazy"></a><a href="house-4.jpg" target="_blank" rel="noopener"><img src="house-4.jpg" alt="House view 4" loading="lazy"></a><a href="house-10.jpg" target="_blank" rel="noopener"><img src="house-10.jpg" alt="House view 10" loading="lazy"></a></div>
     </div>
 
     <div style="margin-top: 50px; border-top: 2px solid #eee; padding-top: 30px; text-align: center;">
