@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://dobrudja-homes.eu/sitemap.xml
