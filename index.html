@@ -190,6 +190,11 @@
     .gal img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,.1); display: block; }
     .gal.plans { grid-template-columns: repeat(2, 1fr); }
     .gal.c2 { grid-template-columns: repeat(2, 1fr); }
+    /* фото объекта Победа: кликабельные */
+    .photos a { display: block; width: calc(33.333% - 10px); }
+    .photos a img { width: 100%; }
+    @media (max-width: 768px) { .photos a { width: calc(50% - 8px); } }
+    @media (max-width: 480px) { .photos a { width: 100%; } }
     .gal.c1 { grid-template-columns: 1fr; }
     .gal.c1 img { aspect-ratio: 21 / 9; }
     .pm { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin: 14px 0 18px; }
@@ -226,18 +231,18 @@
     @media (prefers-reduced-motion: reduce) { .mapsvg .pulse { animation: none; opacity: .25; } }
 </style>
   <!-- seo --><meta name="google-site-verification" content="dea14UlWmBgjBQll3xyfN_NRje7SU7DEOw7RGGbHWPI" />
-  <link rel="canonical" href="https://dobrudja-homes.bulgaria.workers.dev/">
-  <link rel="alternate" hreflang="ru" href="https://dobrudja-homes.bulgaria.workers.dev/">
-  <link rel="alternate" hreflang="bg" href="https://dobrudja-homes.bulgaria.workers.dev/index-bg">
-  <link rel="alternate" hreflang="de" href="https://dobrudja-homes.bulgaria.workers.dev/index-de">
-  <link rel="alternate" hreflang="en" href="https://dobrudja-homes.bulgaria.workers.dev/index-en">
-  <link rel="alternate" hreflang="x-default" href="https://dobrudja-homes.bulgaria.workers.dev/index-en">
+  <link rel="canonical" href="https://dobrudja-homes.eu/">
+  <link rel="alternate" hreflang="ru" href="https://dobrudja-homes.eu/">
+  <link rel="alternate" hreflang="bg" href="https://dobrudja-homes.eu/index-bg">
+  <link rel="alternate" hreflang="de" href="https://dobrudja-homes.eu/index-de">
+  <link rel="alternate" hreflang="en" href="https://dobrudja-homes.eu/index-en">
+  <link rel="alternate" hreflang="x-default" href="https://dobrudja-homes.eu/index-en">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Dobrudja Homes">
   <meta property="og:title" content="Недвижимость в Добриче, Балчике и Варне: дом и инвестиции">
   <meta property="og:description" content="Продажа недвижимости в регионе Добрич – Балчик – Варна: дом для жизни и объект с доходом. Напрямую от собственника, без комиссии. Тихо, спокойно, море рядом.">
-  <meta property="og:url" content="https://dobrudja-homes.bulgaria.workers.dev/">
-  <meta property="og:image" content="https://dobrudja-homes.bulgaria.workers.dev/odrintsi9.jpg">
+  <meta property="og:url" content="https://dobrudja-homes.eu/">
+  <meta property="og:image" content="https://dobrudja-homes.eu/odrintsi9.jpg">
   <meta property="og:locale" content="ru_RU">
   <meta name="twitter:card" content="summary_large_image"><!-- /seo -->
 </head>
@@ -260,7 +265,7 @@
       </ul>
     </div>
     <h2 style="text-align:left">Объекты на продажу</h2>
-    <a class="ocard" href="obj1-ru.html"><img src="house-main.jpg" alt="с. Победа (рядом с Добричем): участки, дом и солнечная станция 30 кWp"><div class="in"><h2>с. Победа (рядом с Добричем): участки, дом и солнечная станция 30 кWp</h2><div class="price">от 25 000 €</div><span class="go">Подробнее →</span></div></a>
+    <a class="ocard" href="obj1-ru.html"><img src="card-obj1.jpg" alt="с. Победа (рядом с Добричем): участки, дом и солнечная станция 30 кWp"><div class="in"><h2>с. Победа (рядом с Добричем): участки, дом и солнечная станция 30 кWp</h2><div class="price">от 25 000 €</div><span class="go">Подробнее →</span></div></a>
     <a class="ocard" href="odrintsi-ru.html"><img src="odrintsi9.jpg" alt="Дом с духом традиции, СПА и теплица, с. Одринци"><div class="in"><h2>Дом с духом традиции, СПА и теплица, с. Одринци</h2><div class="price">135 000 €</div><span class="go">Подробнее →</span></div></a>
 
     <section class="mapbox" id="map" data-reg="802.3 69.0 720.0 450.0" data-cty="-12.5 76.5 1560.0 975.0" data-gm-reg="https://www.google.com/maps/@?api=1&amp;map_action=map&amp;center=43.55,27.5&amp;zoom=9" data-gm-cty="https://www.google.com/maps/@?api=1&amp;map_action=map&amp;center=42.75,25.4&amp;zoom=7" data-lbl-reg="Открыть на Google Maps" data-lbl-cty="Вся Болгария на Google Maps">
