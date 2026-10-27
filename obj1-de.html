@@ -155,6 +155,12 @@
       }
     }
   
+    /* контрастность (доступность) */
+    .contact-btn[style*="#0088cc"] { background: #0077b6 !important; }
+    .contact-btn[style*="#d35f5f"] { background: #b83a3a !important; }
+    .contact-btn[style*="#25D366"] { background: #0e7a3f !important; }
+    .sidenav .nh { color: #595959; }
+    main { display: block; }
     /* ---- флаги языков ---- */
     .lang-switcher.flags { gap: 10px; }
     .lang-switcher .flag { display: inline-block; width: 38px; height: 26px; padding: 0; border-radius: 4px; overflow: hidden;
@@ -165,7 +171,7 @@
     /* ---- боковой навигатор ---- */
     .sidenav { position: fixed; left: 12px; top: 14px; width: 190px; background: #fff; border: 1px solid #e3e7ee; border-radius: 10px;
       box-shadow: 0 2px 10px rgba(0,0,0,.07); padding: 10px; z-index: 50; display: flex; flex-direction: column; gap: 6px; font-size: 14px; line-height: 1.3; }
-    .sidenav .nh { font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: #888; padding: 2px 6px; }
+    .sidenav .nh { font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: #595959; padding: 2px 6px; }
     .sidenav .nv { display: flex; align-items: center; gap: 10px; padding: 6px; border-radius: 8px; text-decoration: none; color: #333; }
     .sidenav .nv:hover { background: #f1f5fb; }
     .sidenav .nv.on { background: #e6eefb; box-shadow: inset 3px 0 0 #2c5aa0; }
@@ -248,6 +254,7 @@
 </head>
 <body>
 <nav class="sidenav" aria-label="Objekte"><div class="nh">Objekte</div><a class="nv" href="index-de.html"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z" fill="currentColor"/></svg></span><span class="tx"><b>Startseite</b></span></a><a class="nv on" href="obj1-de.html" aria-current="page"><img src="img/thumb-obj1.jpg" alt="" loading="lazy"><span class="tx"><b>Pobeda</b><span class="sub">Grundstücke, Haus, Solaranlage</span></span></a><a class="nv" href="odrintsi-de.html"><img src="img/thumb-odrintsi.jpg" alt="" loading="lazy"><span class="tx"><b>Odrintsi</b><span class="sub">Haus, SPA, Gewächshaus</span></span></a></nav>
+<main>
   <div class="lang-switcher flags"><a class="flag" href="obj1-ru.html" title="Русский" aria-label="Русский" hreflang="ru"><svg viewBox="0 0 30 20" aria-hidden="true"><rect width="30" height="20" fill="#fff"/><rect y="6.67" width="30" height="6.67" fill="#0039A6"/><rect y="13.33" width="30" height="6.67" fill="#D52B1E"/></svg></a><a class="flag" href="obj1-bg.html" title="Български" aria-label="Български" hreflang="bg"><svg viewBox="0 0 30 20" aria-hidden="true"><rect width="30" height="20" fill="#fff"/><rect y="6.67" width="30" height="6.67" fill="#00966E"/><rect y="13.33" width="30" height="6.67" fill="#D62612"/></svg></a><a class="flag cur" href="obj1-de.html" title="Deutsch" aria-label="Deutsch" hreflang="de" aria-current="true"><svg viewBox="0 0 30 20" aria-hidden="true"><rect width="30" height="20" fill="#000"/><rect y="6.67" width="30" height="6.67" fill="#DD0000"/><rect y="13.33" width="30" height="6.67" fill="#FFCE00"/></svg></a><a class="flag" href="obj1-en.html" title="English" aria-label="English" hreflang="en"><svg viewBox="0 0 60 40" preserveAspectRatio="none" aria-hidden="true"><clipPath id="gbs"><path d="M0,0 v40 h60 v-40 z"/></clipPath><clipPath id="gbt"><path d="M30,20 h30 v20 z v20 h-30 z h-30 v-20 z v-20 h30 z"/></clipPath><g clip-path="url(#gbs)"><path d="M0,0 v40 h60 v-40 z" fill="#012169"/><path d="M0,0 L60,40 M60,0 L0,40" stroke="#fff" stroke-width="8"/><path d="M0,0 L60,40 M60,0 L0,40" clip-path="url(#gbt)" stroke="#C8102E" stroke-width="5"/><path d="M30,0 v40 M0,20 h60" stroke="#fff" stroke-width="13"/><path d="M30,0 v40 M0,20 h60" stroke="#C8102E" stroke-width="8"/></g></svg></a></div>
   <div class="listing-section">
     <h1>Grundstücke und Solaranlage 30 kWp.<br>3 Varianten – zusammen oder einzeln erhältlich</h1>
@@ -303,5 +310,6 @@
     </div>
 
   </div>
+</main>
 </body>
 </html>
